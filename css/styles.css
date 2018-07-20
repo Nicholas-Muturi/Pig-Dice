@@ -139,7 +139,7 @@ body {
   margin: 0;
 }
 
-.activePlayer {
+.activeTurn {
   text-shadow: 3px 3px 40px #008cff;
   -webkit-text-stroke: 1px #008cff;
   -moz-text-stroke: 1px #008cff;

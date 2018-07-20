@@ -3,24 +3,29 @@ $(document).ready(function(){
     event.preventDefault();
     var playerOneInput = $("input#playerOneInput").val();
     var playerTwoInput = $("input#playerTwoInput").val();
-    
+    var playerOneStatus = $("#player1Name").attr("class");
+    var playerTwoStatus = $("#player2Name").attr("class");
 
-    var player1 = new Player(playerOneInput);
-    var player2 = new Player(playerTwoInput);
+
+    var player1 = new Player(playerOneInput, playerOneStatus);
+    var player2 = new Player(playerTwoInput, playerTwoStatus);
 
     var allPlayers = [player1, player2];
 
-    $("h2#player1Name").text(player1.name).addClass("activePlayer");;
+    $("h2#player1Name").text(player1.name);
     $("h2#player2Name").text(player2.name);
     $("h2#player1OverallScore").text("0").addClass("animated rollIn");
     $("h2#player2OverallScore").text("0").addClass("animated rollIn");
     clearForm();
 
-    $("#rollDiceButton").click(function(){
-      if($("h2#player2Name").attr("class")=="activePlayer"){
-        console.log("player is active");
+    $("#holdButton").click(function(){
+      switchPlayerTurn();
+      player1.status = $("#player1Name").attr("class");
+      player2.status = $("#player2Name").attr("class");
+      if(player1.status == "activeTurn"){
+        console.log("player 1 is now active");
       }else {
-        console.log("player is not active")
+        console.log("Player 1 is not active")
       }
     });
 
@@ -31,12 +36,18 @@ $(document).ready(function(){
     $("form#usernameForm").slideUp("10000");
   }
 
+  function switchPlayerTurn(){
+    $("#player1Name").toggleClass("activeTurn");
+    $("#player2Name").toggleClass("activeTurn");
+  }
+
 });
 
-function Player(name){
+function Player(name,status){
   this.name = name;
-  var overallScore;
-  var turnTotalScore;
+  this.status = status;
+  overallScore: 0;
+  turnTotalScore: 0;
 }
 
 Player.prototype.rollDice = function () {
