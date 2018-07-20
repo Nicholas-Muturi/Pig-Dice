@@ -64,7 +64,18 @@ $(document).ready(function(){
         switchPlayerTurn();
       }
       else {
-        
+        playerTwo.hold();
+        $("#player2OverallScore").text(playerTwo.overallScore);
+        $("#playerTwoTurnScore").text(playerTwo.turnScore);
+        switchPlayerTurn();
+      }
+
+      /*........Checks for Winner.....*/
+      if(playerOne.overallScore === 100){
+        alert(playerOne.name+ " is a Winner Winner Chicken Dinner!");
+      }
+      else if(playerTwo.overallScore === 100) {
+        alert(playerTwo.name+ " is a Winner Winner Chicken Dinner!");
       }
     });
 
@@ -73,7 +84,7 @@ $(document).ready(function(){
   function clearForm(){
     $("input#playerOneInput").val("");
     $("input#playerTwoInput").val("");
-    $("form#usernameForm").slideUp("10000");
+    $("form#usernameForm").slideUp("slow");
   }
 
   function switchPlayerTurn(){
