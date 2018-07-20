@@ -14,24 +14,33 @@ $(document).ready(function(){
     $("#player2Name").text(player2.name);
     $("#player1OverallScore").text(player1.overallScore).addClass("animated rollIn");
     $("#player2OverallScore").text(player2.overallScore).addClass("animated rollIn");
+    $("#playerOneTurnScore").text(player1.turnScore);
+    $("#playerTwoTurnScore").text(player1.turnScore);
     clearForm();
 
     $("#rollDiceButton").click(function(){
-      var random = randomizer();
-      $("#dice").text(random);
-    });
-
-    $("#holdButton").click(function(){
-      switchPlayerTurn();
       player1.status = $("#player1Name").attr("class");
       player2.status = $("#player2Name").attr("class");
 
       if(player1.status == "activeTurn"){
-        console.log("player 1 is now active");
-      }else {
-        console.log("Player 1 is not active")
+        player1.rollDice();
+        $("#playerOneTurnScore").text(player1.turnScore);
       }
+      else if(player2.status == "activeTurn"){
+        player2.rollDice();
+      }
+    });
 
+    $("#holdButton").click(function(){
+      player1.status = $("#player1Name").attr("class");
+      player2.status = $("#player2Name").attr("class");
+
+      if(player1.status == "activeTurn"){
+        player1.hold();
+      }
+      else if(player2.status == "activeTurn"){
+        player2.hold();
+      }
     });
 
   });
@@ -56,21 +65,19 @@ function Player(name,status,ovScore,turnScore){
 }
 
 Player.prototype.rollDice = function () {
-
+  var randomNo = Math.floor(Math.random()*6)+1;
+  $("#dice").text(randomNo);
+  if (randomNo !== 1){
+    this.turnScore += randomNo;
+  }else {
+    this.turnScore = 0;
+    switchPlayerTurn();
+    return false;
+  }
 };
 
 Player.prototype.hold = function () {
-
+  this.overallScore += this.turnScore;
+  this.turnScore = 0;
+  switchPlayerTurn();
 };
-
-function calcOverallScore(){
-
-}
-
-function calcTurnTotal() {
-
-};
-
-function randomizer(){
-  return Math.floor(Math.random()*6)+1;
-}

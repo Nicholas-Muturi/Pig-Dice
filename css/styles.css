@@ -95,7 +95,7 @@ body {
 /*............DICE AREA..............*/
 .dice-roll-section {
   margin: 0;
-  padding: 7em;
+  padding: 6em;
   background: #BFCDE0;
   text-align: center;
   font-size: 30px;
@@ -108,9 +108,10 @@ body {
 }
 
 #dice {
-  font-size: 2em;
+  font-size: 3em;
   font-family: "Lobster Two";
   margin: 0;
+  padding: 0;
 }
 /*.........END OF DICE AREA...........*/
 
