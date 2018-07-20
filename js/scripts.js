@@ -7,39 +7,61 @@ $(document).ready(function(){
     var playerTwoStatus = $("#player2Name").attr("class");
 
 
-    var player1 = new Player(playerOneInput, playerOneStatus, 0, 0);
-    var player2 = new Player(playerTwoInput, playerTwoStatus, 0, 0);
+    var playerOne = new Player(playerOneInput, playerOneStatus, 0, 0);
+    var playerTwo = new Player(playerTwoInput, playerTwoStatus, 0, 0);
 
-    $("#player1Name").text(player1.name);
-    $("#player2Name").text(player2.name);
-    $("#player1OverallScore").text(player1.overallScore).addClass("animated rollIn");
-    $("#player2OverallScore").text(player2.overallScore).addClass("animated rollIn");
-    $("#playerOneTurnScore").text(player1.turnScore);
-    $("#playerTwoTurnScore").text(player1.turnScore);
+    $("#player1Name").text(playerOne.name);
+    $("#player2Name").text(playerTwo.name);
+    $("#player1OverallScore").text(playerOne.overallScore).addClass("animated rollIn");
+    $("#player2OverallScore").text(playerTwo.overallScore).addClass("animated rollIn");
+    $("#playerOneTurnScore").text(playerOne.turnScore);
+    $("#playerTwoTurnScore").text(playerOne.turnScore);
     clearForm();
 
     $("#rollDiceButton").click(function(){
-      player1.status = $("#player1Name").attr("class");
-      player2.status = $("#player2Name").attr("class");
+      playerOne.status = $("#player1Name").attr("class");
+      playerTwo.status = $("#player2Name").attr("class");
 
-      if(player1.status == "activeTurn"){
-        player1.rollDice();
-        $("#playerOneTurnScore").text(player1.turnScore);
+      if(playerOne.status == "activeTurn"){
+        var diceRoll = playerOne.rollDice();
+        if(diceRoll != 1){
+          $("#dice").text(diceRoll);
+          playerOne.turnScore += diceRoll;
+          $("#playerOneTurnScore").text(playerOne.turnScore);
+        }
+        else{
+          $("#dice").text(diceRoll);
+          playerOne.turnScore = 0;
+          $("#playerOneTurnScore").text("0");
+          switchPlayerTurn();
+        }
       }
-      else if(player2.status == "activeTurn"){
-        player2.rollDice();
+      else{
+        var diceRoll = playerTwo.rollDice();
+        if(diceRoll != 1){
+          $("#dice").text(diceRoll);
+          playerTwo.turnScore += diceRoll;
+          $("#playerTwoTurnScore").text(playerTwo.turnScore);
+        }
+        else{
+          $("#dice").text(diceRoll);
+          playerTwo.turnScore = 0;
+          $("#playerTwoTurnScore").text("0");
+          switchPlayerTurn();
+        }
       }
+
     });
 
     $("#holdButton").click(function(){
-      player1.status = $("#player1Name").attr("class");
-      player2.status = $("#player2Name").attr("class");
+      playerOne.status = $("#player1Name").attr("class");
+      playerTwo.status = $("#player2Name").attr("class");
 
-      if(player1.status == "activeTurn"){
-        player1.hold();
+      if(playerOne.status == "activeTurn"){
+        playerOne.hold();
       }
-      else if(player2.status == "activeTurn"){
-        player2.hold();
+      else if(playerTwo.status == "activeTurn"){
+        playerTwo.hold();
       }
     });
 
@@ -66,14 +88,7 @@ function Player(name,status,ovScore,turnScore){
 
 Player.prototype.rollDice = function () {
   var randomNo = Math.floor(Math.random()*6)+1;
-  $("#dice").text(randomNo);
-  if (randomNo !== 1){
-    this.turnScore += randomNo;
-  }else {
-    this.turnScore = 0;
-    switchPlayerTurn();
-    return false;
-  }
+  return randomNo;
 };
 
 Player.prototype.hold = function () {
