@@ -101,6 +101,10 @@ body {
 .userButtons {
   text-align: center;
 }
+
+#dice {
+  font-size: 2em;
+}
 /*.........END OF DICE AREA...........*/
 
 
