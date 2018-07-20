@@ -7,26 +7,31 @@ $(document).ready(function(){
     var playerTwoStatus = $("#player2Name").attr("class");
 
 
-    var player1 = new Player(playerOneInput, playerOneStatus);
-    var player2 = new Player(playerTwoInput, playerTwoStatus);
+    var player1 = new Player(playerOneInput, playerOneStatus, 0, 0);
+    var player2 = new Player(playerTwoInput, playerTwoStatus, 0, 0);
 
-    var allPlayers = [player1, player2];
-
-    $("h2#player1Name").text(player1.name);
-    $("h2#player2Name").text(player2.name);
-    $("h2#player1OverallScore").text("0").addClass("animated rollIn");
-    $("h2#player2OverallScore").text("0").addClass("animated rollIn");
+    $("#player1Name").text(player1.name);
+    $("#player2Name").text(player2.name);
+    $("#player1OverallScore").text(player1.overallScore).addClass("animated rollIn");
+    $("#player2OverallScore").text(player2.overallScore).addClass("animated rollIn");
     clearForm();
+
+    $("#rollDiceButton").click(function(){
+      var random = randomizer();
+      $("#dice").text(random);
+    });
 
     $("#holdButton").click(function(){
       switchPlayerTurn();
       player1.status = $("#player1Name").attr("class");
       player2.status = $("#player2Name").attr("class");
+
       if(player1.status == "activeTurn"){
         console.log("player 1 is now active");
       }else {
         console.log("Player 1 is not active")
       }
+
     });
 
   });
@@ -43,11 +48,11 @@ $(document).ready(function(){
 
 });
 
-function Player(name,status){
+function Player(name,status,ovScore,turnScore){
   this.name = name;
   this.status = status;
-  overallScore: 0;
-  turnTotalScore: 0;
+  this.overallScore = ovScore;
+  this.turnScore = turnScore;
 }
 
 Player.prototype.rollDice = function () {
@@ -65,3 +70,7 @@ function calcOverallScore(){
 function calcTurnTotal() {
 
 };
+
+function randomizer(){
+  return Math.floor(Math.random()*6)+1;
+}
