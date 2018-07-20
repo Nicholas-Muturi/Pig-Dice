@@ -11,7 +11,13 @@ body {
   background: #BFCDE0;
   font-family: "Merriweather";
 }
+.container-fluid {
+  height: 100%;
+  min-height: 100%;
+  display: table;
+}
 
+/*............JUMBOTRON..............*/
 .jumbotron {
   padding: 4em 0 7em 0;
   margin: 0;
@@ -34,11 +40,49 @@ body {
   -moz-text-stroke: 2px #27474E;
 }
 
-.jumbotron h4 {
+.jumbotron h3 {
   font-family:"Kaushan Script";
   font-size: 2em;
   margin-top: 0;
   padding: 0 auto;
-  -webkit-text-stroke: 0.3px #27474E;
-  -moz-text-stroke: 0.3px #27474E;
+  -webkit-text-stroke: 0.5px #27474E;
+  -moz-text-stroke: 0.5px #27474E;
 }
+/*............END OF JUMBOTRON..............*/
+
+
+/*............SCORE BOARD..............*/
+.score-board {
+  background: rgb(191, 139, 221);
+  text-align: center;
+}
+.score-board h2 {
+  padding: 10px;
+}
+/*............END OF SCOREBOARD..............*/
+
+
+/*............DICE AREA..............*/
+.dice-roll-section {
+  padding: 0px;
+  margin: 7em;
+  text-align: center;
+  font-size: 30px;
+}
+/*............END OF DICE AREA..............*/
+
+
+/*............PLAYER BOARD..............*/
+.player-board {
+  padding: 0;
+  margin: 0;
+  background: rgb(191, 139, 221);
+  text-align: center;
+  display: table-row;
+  vertical-align: bottom;
+}
+.playerOneName h2, .playerTwoName h2{
+  padding: 10px;
+  margin: 0;
+}
+/*............END OF PLAYER BOARD..............*/
