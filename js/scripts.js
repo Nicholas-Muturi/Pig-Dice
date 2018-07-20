@@ -2,11 +2,11 @@
 $(document).ready(function(){
   $("form#usernameForm").submit(function(event){
     event.preventDefault();
+    $(".userButtons").show();
     var playerOneInput = $("input#playerOneInput").val();
     var playerTwoInput = $("input#playerTwoInput").val();
     var playerOneStatus = $("#player1Name").attr("class");
     var playerTwoStatus = $("#player2Name").attr("class");
-
 
     var playerOne = new Player(playerOneInput, playerOneStatus, 0, 0);
     var playerTwo = new Player(playerTwoInput, playerTwoStatus, 0, 0);
@@ -73,9 +73,11 @@ $(document).ready(function(){
       /*........Checks for Winner.....*/
       if(playerOne.overallScore === 100){
         alert(playerOne.name+ " is a Winner Winner Chicken Dinner!");
+        resetGame();
       }
       else if(playerTwo.overallScore === 100) {
         alert(playerTwo.name+ " is a Winner Winner Chicken Dinner!");
+        resetGame();
       }
     });
 
@@ -92,6 +94,12 @@ $(document).ready(function(){
     $("#player2Name").toggleClass("activeTurn");
   }
 
+  function resetGame(){
+    $("form#usernameForm").slideDown("slow");
+    $(".userButtons").hide();
+  }
+
+  
 });//End of JQuery
 
 

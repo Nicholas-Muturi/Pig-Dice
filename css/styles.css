@@ -105,6 +105,7 @@ body {
   margin: 0;
   text-align: center;
   background: #BFCDE0;
+  display: none;
 }
 
 #dice {
