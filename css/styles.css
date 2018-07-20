@@ -9,8 +9,8 @@ Dark Shades: #27474E
 
 body {
   font-family: "Merriweather";
-  background: #BFCDE0;
 }
+
 .container-fluid {
   height: 100%;
   min-height: 100%;
@@ -19,7 +19,7 @@ body {
 }
 
 /*............JUMBOTRON..............*/
-.jumbotron {
+.jumbotron-fluid {
   padding: 4em 0 7em 0;
   margin: 0;
   border-radius: 0;
@@ -32,7 +32,7 @@ body {
   width: 100%;
 }
 
-.jumbotron h1 {
+.jumbotron-fluid h1 {
   font-family: "Luckiest Guy";
   font-size: 6em;
   padding: 0 auto;
@@ -41,7 +41,7 @@ body {
   -moz-text-stroke: 2px #27474E;
 }
 
-.jumbotron h3 {
+.jumbotron-fluid h3 {
   font-family:"Kaushan Script";
   font-size: 2em;
   margin-top: 0;
@@ -79,12 +79,20 @@ body {
   border-right: 0.5px solid rgba(0, 0, 0, 0.6);
 }
 
-.userTurnTotal {
-  text-align: center;
+.userTurnTotal p{
+  padding: 0;
+  margin: 0;
+  margin-left: auto;
+  margin-right: auto;
 }
+
 #playerOneTurnScore, #playerTwoTurnScore{
   font-family: "Slabo";
   font-size: 20px;
+  text-align: center;
+  margin: 0;
+  padding: 3px;
+  background: #BFCDE0;
 }
 
 
@@ -93,17 +101,22 @@ body {
 
 /*............DICE AREA..............*/
 .dice-roll-section {
-  padding: 0px;
-  margin: 7em;
+  margin: 0;
+  padding: 7em;
+  background: #BFCDE0;
   text-align: center;
   font-size: 30px;
 }
+
 .userButtons {
+  margin: 0;
   text-align: center;
+  background: #BFCDE0;
 }
 
 #dice {
   font-size: 2em;
+  margin: 0;
 }
 /*.........END OF DICE AREA...........*/
 
@@ -127,6 +140,8 @@ body {
 }
 
 .activePlayer {
-  text-shadow: 2px 2px 30px rgb(0, 201, 255);
+  text-shadow: 3px 3px 40px #008cff;
+  -webkit-text-stroke: 1px #008cff;
+  -moz-text-stroke: 1px #008cff;
 }
 /*............END OF PLAYER BOARD..............*/

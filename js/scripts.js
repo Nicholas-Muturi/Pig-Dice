@@ -3,6 +3,7 @@ $(document).ready(function(){
     event.preventDefault();
     var playerOneInput = $("input#playerOneInput").val();
     var playerTwoInput = $("input#playerTwoInput").val();
+    
 
     var player1 = new Player(playerOneInput);
     var player2 = new Player(playerTwoInput);
