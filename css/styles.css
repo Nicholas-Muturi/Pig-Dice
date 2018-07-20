@@ -53,7 +53,7 @@ body {
 /*............PLAYER FORM..............*/
 #usernameForm {
   text-align: center;
-  background: #27474E;
+  background: #2b4e55;
   padding: 20px 0 30px 0;
   margin: 0;
   color: #F3F3EE;
@@ -66,16 +66,27 @@ body {
 
 
 /*............SCORE BOARD..............*/
-.score-board {
-  background: rgb(191, 139, 221);
+.overallScoreBoard {
+  background: rgb(187, 137, 215);
   text-align: center;
+  font-family: "Chela One";
 }
-.score-board h2 {
+.overallScoreBoard h2 {
   padding: 10px;
 }
 .playerOneScore {
   border-right: 0.5px solid rgba(0, 0, 0, 0.6);
 }
+
+.userTurnTotal {
+  text-align: center;
+}
+#playerOneTurnScore, #playerTwoTurnScore{
+  font-family: "Merienda";
+  font-size: 18px;
+}
+
+
 /*............END OF SCOREBOARD..............*/
 
 
@@ -86,6 +97,9 @@ body {
   text-align: center;
   font-size: 30px;
 }
+.userButtons {
+  text-align: center;
+}
 /*.........END OF DICE AREA...........*/
 
 
@@ -93,10 +107,11 @@ body {
 .player-board {
   padding: 0;
   margin: 0;
-  background: rgb(191, 139, 221);
+  background: rgb(187, 137, 215);
   text-align: center;
   display: table-row;
   vertical-align: bottom;
+  font-family: "Chela One";
 }
 .playerOneName {
   border-right: 0.5px solid rgba(0, 0, 0, 0.6);

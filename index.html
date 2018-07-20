@@ -33,7 +33,7 @@
     </form>
 
     <!--..............SCORE BOARD..............-->
-    <div class="score-board">
+    <div class="overallScoreBoard">
       <div class="row">
         <div class="col-md-6 playerOneScore">
           <h2>player 1 score</h2>
@@ -43,12 +43,25 @@
         </div>
       </div>
     </div>
+    <div class="userTurnTotal">
+      <div class="row">
+        <div class="col-md-6">
+          <p id="playerOneTurnScore">0</p>
+        </div>
+        <div class="col-md-6">
+          <p id="playerTwoTurnScore">0</p>
+        </div>
+      </div>
+    </div>
 
     <!--..............DICE..............-->
     <div class="dice-roll-section">
       <h1>DICE AREA</h1>
     </div>
-
+    <div class="userButtons">
+      <span class="btn btn-primary" id="rollDiceButton">Roll Dice</span>
+      <span class="btn btn-danger" id="holdButton">Hold</span>
+    </div>
     <!--..............PLAYER NAMES..............-->
     <div class="player-board">
       <div class="row">
