@@ -1,3 +1,4 @@
+/*..............FRONT END..............*/
 $(document).ready(function(){
   $("form#usernameForm").submit(function(event){
     event.preventDefault();
@@ -21,9 +22,9 @@ $(document).ready(function(){
     $("#rollDiceButton").click(function(){
       playerOne.status = $("#player1Name").attr("class");
       playerTwo.status = $("#player2Name").attr("class");
-
+      var diceRoll;
       if(playerOne.status == "activeTurn"){
-        var diceRoll = playerOne.rollDice();
+        diceRoll = playerOne.rollDice();
         if(diceRoll != 1){
           $("#dice").text(diceRoll);
           playerOne.turnScore += diceRoll;
@@ -36,21 +37,20 @@ $(document).ready(function(){
           switchPlayerTurn();
         }
       }
-      else{
-        var diceRoll = playerTwo.rollDice();
+      else {
+        diceRoll = playerTwo.rollDice();
         if(diceRoll != 1){
           $("#dice").text(diceRoll);
           playerTwo.turnScore += diceRoll;
           $("#playerTwoTurnScore").text(playerTwo.turnScore);
         }
-        else{
+        else {
           $("#dice").text(diceRoll);
           playerTwo.turnScore = 0;
           $("#playerTwoTurnScore").text("0");
           switchPlayerTurn();
         }
       }
-
     });
 
     $("#holdButton").click(function(){
@@ -59,13 +59,17 @@ $(document).ready(function(){
 
       if(playerOne.status == "activeTurn"){
         playerOne.hold();
+        $("#player1OverallScore").text(playerOne.overallScore);
+        $("#playerOneTurnScore").text(playerOne.turnScore);
+        switchPlayerTurn();
       }
-      else if(playerTwo.status == "activeTurn"){
-        playerTwo.hold();
+      else {
+        
       }
     });
 
-  });
+  }); //End of Form Submit
+
   function clearForm(){
     $("input#playerOneInput").val("");
     $("input#playerTwoInput").val("");
@@ -77,8 +81,12 @@ $(document).ready(function(){
     $("#player2Name").toggleClass("activeTurn");
   }
 
-});
+});//End of JQuery
 
+
+
+
+/*..............BACK END..............*/
 function Player(name,status,ovScore,turnScore){
   this.name = name;
   this.status = status;
@@ -94,5 +102,4 @@ Player.prototype.rollDice = function () {
 Player.prototype.hold = function () {
   this.overallScore += this.turnScore;
   this.turnScore = 0;
-  switchPlayerTurn();
 };
