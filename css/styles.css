@@ -1,0 +1,44 @@
+/*
+Light shades: #F3F3EE
+Light Accent: #8AC55B
+Main brand Color: #97ADA6
+Dark Accents: #858F9A
+Dark Shades: #27474E
+*/
+@import url('https://fonts.googleapis.com/css?family=Chela+One|Kaushan+Script|Lobster+Two|Luckiest+Guy|Merienda|Merriweather|Patua+One|Poppins|Press+Start+2P|Russo+One|Slabo+27px');
+
+body {
+  background: #BFCDE0;
+  font-family: "Merriweather";
+}
+
+.jumbotron {
+  padding: 4em 0 7em 0;
+  margin: 0;
+  border-radius: 0;
+  background-image: url("../images/backgrounds/pig-background.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: white;
+  text-align: center;
+  width: 100%;
+}
+
+.jumbotron h1 {
+  font-family: "Luckiest Guy";
+  font-size: 6em;
+  padding: 0 auto;
+  margin-bottom: 0;
+  -webkit-text-stroke: 2px #27474E;
+  -moz-text-stroke: 2px #27474E;
+}
+
+.jumbotron h4 {
+  font-family:"Kaushan Script";
+  font-size: 2em;
+  margin-top: 0;
+  padding: 0 auto;
+  -webkit-text-stroke: 0.3px #27474E;
+  -moz-text-stroke: 0.3px #27474E;
+}
