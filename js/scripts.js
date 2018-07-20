@@ -95,11 +95,13 @@ $(document).ready(function(){
   }
 
   function resetGame(){
-    $("form#usernameForm").slideDown("slow");
+    $("#playerOneTurnScore").text("0");
+    $("#playerTwoTurnScore").text("0");
+    $("form#usernameForm").show();
     $(".userButtons").hide();
   }
 
-  
+
 });//End of JQuery
 
 
