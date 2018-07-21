@@ -78,17 +78,6 @@ body {
 .playerOneScore {
   border-right: 0.5px solid rgba(0, 0, 0, 0.6);
 }
-
-.userTurnTotal p{
-  margin: 0;
-  padding: 3px;
-  margin-left: auto;
-  margin-right: auto;
-  font-family: "Slabo";
-  font-size: 20px;
-  text-align: center;
-  background: #BFCDE0;
-}
 /*............END OF SCOREBOARD..............*/
 
 

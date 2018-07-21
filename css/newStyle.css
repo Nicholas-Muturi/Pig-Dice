@@ -117,4 +117,89 @@ body {
   display: none;
 }
 
-/*............PLAYER SECTION..............*/
+/*............END OF PLAYER SECTION..............*/
+
+.game-section {
+  margin: 0;
+  padding: 0;
+  background: white;
+}
+
+/*............SCORE BOARD..............*/
+.overallScoreBoard {
+  background: #EF9A85;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  font-family: "Russo One";
+}
+.overallScoreBoard h2 {
+  margin: 0;
+  padding: 5px;
+  font-size: 50px;
+}
+.playerOneScore {
+  border-right: 0.5px solid rgba(0, 0, 0, 0.6);
+}
+.userTurnTotal {
+  margin: 0;
+  padding: 0;
+}
+.userTurnTotal p{
+  margin: 0;
+  padding: 3px;
+  font-family: "Slabo";
+  font-size: 20px;
+  text-align: center;
+  background: #BFCDE0;
+}
+/*............END OF SCOREBOARD..............*/
+
+/*............DICE AREA..............*/
+.dice-roll-section {
+  margin: 0;
+  padding: 6em;
+  background: #BFCDE0;
+  text-align: center;
+  font-size: 30px;
+}
+
+.userButtons {
+  margin: 0;
+  text-align: center;
+  background: #BFCDE0;
+  display: none;
+}
+
+#dice {
+  font-size: 3em;
+  font-family: "Lobster Two";
+  margin: 0;
+  padding: 0;
+}
+/*.........END OF DICE AREA...........*/
+
+
+/*............PLAYER BOARD..............*/
+.player-board {
+  padding: 0;
+  margin: 0;
+  background: rgb(187, 137, 215);
+  text-align: center;
+  vertical-align: bottom;
+  font-family: "Chela One";
+}
+.playerOneName {
+  border-right: 0.5px solid rgba(0, 0, 0, 0.6);
+}
+.playerOneName h2, .playerTwoName h2{
+  padding: 10px;
+  margin: 0;
+}
+
+.activeTurn {
+  text-shadow: 3px 3px 40px #008cff;
+  -webkit-text-stroke: 1px #008cff;
+  -moz-text-stroke: 1px #008cff;
+}
+/*............END OF PLAYER BOARD..............*/

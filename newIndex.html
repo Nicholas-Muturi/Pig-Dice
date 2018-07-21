@@ -2,9 +2,9 @@
 <html>
 
 <head>
+  <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
   <link rel="stylesheet"
   href="https://cdn.jsdelivr.net/npm/animate.css@3.5.2/animate.min.css">
-  <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
   <link href="css/newStyle.css" rel="stylesheet" type="text/css">
   <script src="js/jquery-3.3.1.js"></script>
   <script src="js/bootstrap.js"></script>
@@ -44,10 +44,41 @@
           <button type="submit" class="btn btn-success playButton">Play :)</button>
         </form>
       </div>
-
-
-      
     </div> <!-- End Of Body Section -->
+
+    <div class="game-section">
+      <div class="container-fluid gameContainer">
+        <div class="row overallScoreBoard">
+          <h2 class="col-md-6 playerOneScore" id="player1OverallScore"></h2>
+          <h2 class="col-md-6 playerTwoScore" id="player2OverallScore"></h2>
+        </div>
+        <div class="row userTurnTotal">
+          <p class="col-md-6">Turn Total: <span id="playerOneTurnScore"></span></p>
+          <p class="col-md-6">Turn Total: <span id="playerTwoTurnScore" ></span></p>
+        </div>
+
+        <!--..............DICE..............-->
+        <div class="dice-roll-section">
+          <h1 id="dice">0</h1>
+        </div>
+        <div class="userButtons">
+          <span class="btn btn-primary" id="rollDiceButton">Roll Dice</span>
+          <span class="btn btn-danger" id="holdButton">Hold</span>
+        </div>
+
+        <!--..............PLAYER NAMES..............-->
+        <div class="row player-board">
+            <div class="col-md-6 playerOneName">
+              <h2 id="player1Name" class="activeTurn"></h2>
+            </div>
+            <div class="col-md-6 playerTwoName">
+              <h2 id="player2Name" class=""></h2>
+            </div>
+        </div>
+
+      </div> <!--End of game section container-->
+
+    </div><!--End of Game Section-->
 
   </div><!-- End Of Container -->
 </body>
