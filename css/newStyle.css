@@ -5,6 +5,11 @@
   margin: 0;
 }
 
+body {
+  background: #DBEEFC;
+}
+
+/*............JUMBOTRON..............*/
 .jumbotron {
   background-image: url("../images/backgrounds/piggy.png");
   background-position: 50% 96%;
@@ -35,6 +40,7 @@
   -webkit-text-stroke: 0.5px #306BAC;
   -moz-text-stroke: 0.5px #306BAC;
 }
+/*............END OF JUMBOTRON..............*/
 
 
 .body-section {
@@ -43,8 +49,11 @@
   background: #DBEEFC;
 }
 
+
+/*............LANDING MENU..............*/
 .landing-menu {
   text-align: center;
+  height: 100%;
 }
 .landing-menu h3{
   padding-top: 30px;
@@ -54,9 +63,23 @@
 }
 
 .landing-menu ul li{
+  list-style-type: none;
   padding: 5px;
 }
 
 .landing-menu .menuButton {
   padding: 10px 3em 10px 3em;
+  font-family: "Lobster Two";
+  font-size: 25px;
 }
+.landing-menu .menuButton:hover {
+  background: #EF9A85;
+  color: black;
+  cursor: pointer;
+}
+/*............END OF LANDING ..............*/
+
+/*............SINGLE PLAYER SECTION..............*/
+.single-player-section {
+  text-align: center;
+}/*............SINGLE PLAYER SECTION..............*/
