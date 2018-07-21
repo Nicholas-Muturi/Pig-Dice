@@ -34,17 +34,15 @@
 
       <!-- ....................PLAYERS FORM SECTION ..................-->
       <div class="player-section">
-        <form id="usernameForm">
-          <div class="row">
+        <form class="row" id="usernameForm">
             <div class="form-group col-md-6" id="singleplayerDiv">
               <label for="playerOneInput">Player One</label>
-              <input type="text" id="playerOneInput" class="form-control col-md-6" placeholder="Enter Username">
+              <input type="text" id="playerOneInput" class="form-control col-md-6" placeholder="Enter Username" required>
             </div>
             <div class="form-group multiplayerDiv col-md-6" id="multiplayerDiv">
               <label for="playerTwoInput">Player Two</label>
-              <input type="text" id="playerTwoInput" class="form-control col-md-6" placeholder="Enter Username">
+              <input type="text" id="playerTwoInput" class="form-control col-md-6" placeholder="Enter Username" >
             </div>
-          </div>
           <button type="submit" class="btn btn-success playButton">Play :)</button>
         </form>
       </div>

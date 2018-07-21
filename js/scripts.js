@@ -7,6 +7,7 @@ $(document).ready(function() {
       /*.....................SINGLE PLAYER MODE...................*/
       gameType = "singlePlayer";
       startGame();
+      alert("Bot is in easy mode (more modes to come). Good luck!");
       var playerOneInput = $("input#playerOneInput").val();
       var playerOneStatus = $("#player1Name").attr("class");
       var playerOne = new Player(playerOneInput, playerOneStatus, 0, 0);
@@ -23,6 +24,8 @@ $(document).ready(function() {
 
       var playerOne = new Player(playerOneInput, playerOneStatus, 0, 0);
       var playerTwo = new Player(playerTwoInput, playerTwoStatus, 0, 0);
+
+      alert("When your turn is on, your score and name is highlighted in purple. May the luckiest win!");
     }
 
     $("#player1Name").text(playerOne.name);
@@ -113,7 +116,7 @@ $(document).ready(function() {
       }
     });
 
-
+    /*....................'A-I' Brains..................*/
     function computersTurn(){
       playerTwo.status = $("#player2Name").attr("class");
       if(playerTwo.status == "activeTurn"){
