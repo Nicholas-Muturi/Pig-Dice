@@ -3,21 +3,30 @@ $(document).ready(function(){
   $("form#usernameForm").submit(function(event){
     event.preventDefault();
 
+    var gameplayType;
     //Checks Game Mode
     if( $("#multiplayerDiv:hidden").length !== 0 ){
-      console.log("this is singplayer");
-    } else {
-      console.log("this is multiplayer");
-    }
+      /*...........SINGLE PLAYER MODE............*/
+      startGame();
+      gameplayType = "singleplayer";
+      var playerOneInput = $("input#playerOneInput").val();
+      var playerOne = new Player(playerOneInput, playerOneStatus, 0, 0);
+      var playerTwo = new Player("Bot ^_^","", 0, 0);
+      $("form#usernameForm").hide();
 
-    startGame();
-    var playerOneInput = $("input#playerOneInput").val();
-    var playerTwoInput = $("input#playerTwoInput").val();
-    var playerOneStatus = $("#player1Name").attr("class");
-    var playerTwoStatus = $("#player2Name").attr("class");
+    } /*........END OF SINGLE PLAYER MODE.........*/
+    else {
+      /*.............MULTIPLAYER MODE .................*/
+      startGame();
+      gameplayType = "multiplayer"
+      var playerOneInput = $("input#playerOneInput").val();
+      var playerTwoInput = $("input#playerTwoInput").val();
+      var playerOneStatus = $("#player1Name").attr("class");
+      var playerTwoStatus = $("#player2Name").attr("class");
 
-    var playerOne = new Player(playerOneInput, playerOneStatus, 0, 0);
-    var playerTwo = new Player(playerTwoInput, playerTwoStatus, 0, 0);
+      var playerOne = new Player(playerOneInput, playerOneStatus, 0, 0);
+      var playerTwo = new Player(playerTwoInput, playerTwoStatus, 0, 0);
+    } // End of Multiplayer Mode
 
     $("#player1Name").text(playerOne.name);
     $("#player2Name").text(playerTwo.name);
@@ -26,6 +35,7 @@ $(document).ready(function(){
     $("#playerOneTurnScore").text(playerOne.turnScore);
     $("#playerTwoTurnScore").text(playerOne.turnScore);
     clearForm();
+
 
     /*...............ROLL DICE EVENT LISTENER.................*/
     $("#rollDiceButton").click(function(){
@@ -65,7 +75,7 @@ $(document).ready(function(){
       }
     });
 
-    /*...............RHOLD BUTTON EVENT LISTENER.................*/
+    /*...............HOLD BUTTON EVENT LISTENER.................*/
     $("#holdButton").click(function(){
       playerOne.status = $("#player1Name").attr("class");
       playerTwo.status = $("#player2Name").attr("class");
