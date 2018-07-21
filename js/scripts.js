@@ -1,7 +1,5 @@
 /*..............FRONT END..............*/
 $(document).ready(function(){
-
-
   $("form#usernameForm").submit(function(event){
     event.preventDefault();
 
@@ -29,10 +27,14 @@ $(document).ready(function(){
     $("#playerTwoTurnScore").text(playerOne.turnScore);
     clearForm();
 
+    /*...............ROLL DICE EVENT LISTENER.................*/
     $("#rollDiceButton").click(function(){
       playerOne.status = $("#player1Name").attr("class");
       playerTwo.status = $("#player2Name").attr("class");
       var diceRoll;
+
+      /*............UPDATES TURN SCORES FOR EACH PLAYER
+      ..................BASED ON WHO'S TURN IT IS.................*/
       if(playerOne.status == "activeTurn"){
         diceRoll = playerOne.rollDice();
         if(diceRoll != 1){
@@ -63,10 +65,13 @@ $(document).ready(function(){
       }
     });
 
+    /*...............RHOLD BUTTON EVENT LISTENER.................*/
     $("#holdButton").click(function(){
       playerOne.status = $("#player1Name").attr("class");
       playerTwo.status = $("#player2Name").attr("class");
 
+      /*...............UPDATES OVERALL SCORES FOR EACH PLAYER
+      ..................BASED ON WHO'S TURN IT IS.................*/
       if(playerOne.status == "activeTurn"){
         playerOne.hold();
         $("#player1OverallScore").text(playerOne.overallScore);
@@ -77,15 +82,16 @@ $(document).ready(function(){
         playerTwo.hold();
         $("#player2OverallScore").text(playerTwo.overallScore);
         $("#playerTwoTurnScore").text(playerTwo.turnScore);
+
         switchPlayerTurn();
       }
 
-      /*........Checks for Winner.....*/
-      if(playerOne.overallScore === 100){
+      /*...............Checks For Winner.................*/
+      if(playerOne.overallScore >= 100){
         alert(playerOne.name+ " is a Winner Winner Chicken Dinner!");
         resetGame();
       }
-      else if(playerTwo.overallScore === 100) {
+      else if(playerTwo.overallScore >= 100) {
         alert(playerTwo.name+ " is a Winner Winner Chicken Dinner!");
         resetGame();
       }
@@ -94,7 +100,7 @@ $(document).ready(function(){
   }); //End of Form Submit
 
   function startGame(){
-    $(".landing-menu").slideUp();
+    $(".landing-menu").hide();
     $(".game-section").show();
     $(".userButtons").show();
   }
@@ -110,10 +116,9 @@ $(document).ready(function(){
   }
 
   function resetGame(){
-    $("#playerOneTurnScore").text("0");
-    $("#playerTwoTurnScore").text("0");
-    $("form#usernameForm").show();
+    $(".game-section").hide();
     $(".userButtons").hide();
+    $(".landing-menu").show();
   }
 });//End of JQuery
 
