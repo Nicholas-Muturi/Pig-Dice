@@ -7,18 +7,56 @@
 
 .jumbotron {
   background-image: url("../images/backgrounds/piggy.png");
-  background-position: 50% 94%;
+  background-position: 50% 96%;
   background-repeat: no-repeat;
   background-size: cover;
   background-color: #9CD4F9;
   border-radius: 0;
-  padding: 7.3em;
+  margin: 0;
+  padding: 0;
+  padding: 7.5em;
   text-align: center;
+  color: #080b1c;
 }
 
 .jumbotron h1 {
+  margin: 0;
+  padding: 0;
   font-family: "Luckiest Guy";
   font-size: 6em;
-  -webkit-text-stroke: 2px #27474E;
-  -moz-text-stroke: 2px #27474E;
+  -webkit-text-stroke: 2px #306BAC;
+  -moz-text-stroke: 2px #306BAC;
+}
+.jumbotron h3 {
+  margin: 0;
+  padding: 0;
+  font-family:"Kaushan Script";
+  font-size: 2em;
+  -webkit-text-stroke: 0.5px #306BAC;
+  -moz-text-stroke: 0.5px #306BAC;
+}
+
+
+.body-section {
+  margin: 0;
+  padding: 0;
+  background: #DBEEFC;
+}
+
+.landing-menu {
+  text-align: center;
+}
+.landing-menu h3{
+  padding-top: 30px;
+  font-size: 3em;
+  font-family: "Luckiest Guy";
+  text-decoration: underline;
+}
+
+.landing-menu ul li{
+  padding: 5px;
+}
+
+.landing-menu .menuButton {
+  padding: 10px 3em 10px 3em;
 }
