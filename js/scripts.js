@@ -159,6 +159,8 @@ $(document).ready(function() {
   function switchPlayerTurn() {
     $("#player1Name").toggleClass("activeTurn");
     $("#player2Name").toggleClass("activeTurn");
+    $("#player1OverallScore").toggleClass("activeTurn");
+    $("#player2OverallScore").toggleClass("activeTurn");
   }
 
   function resetGame() {
