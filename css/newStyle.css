@@ -1,0 +1,24 @@
+@import url('https://fonts.googleapis.com/css?family=Chela+One|Kaushan+Script|Lobster+Two|Luckiest+Guy|Merienda|Merriweather|Patua+One|Poppins|Press+Start+2P|Russo+One|Slabo+27px');
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+.jumbotron {
+  background-image: url("../images/backgrounds/piggy.png");
+  background-position: 50% 94%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: #9CD4F9;
+  border-radius: 0;
+  padding: 7.3em;
+  text-align: center;
+}
+
+.jumbotron h1 {
+  font-family: "Luckiest Guy";
+  font-size: 6em;
+  -webkit-text-stroke: 2px #27474E;
+  -moz-text-stroke: 2px #27474E;
+}
