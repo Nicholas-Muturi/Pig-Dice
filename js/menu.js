@@ -1,6 +1,7 @@
 $(document).ready(function(){
   $("#usernameForm").hide();
   $(".game-section").hide();
+  $(".about-game").hide();
   $("#singlePlayer").click(function(){
     //console.log("here i am");
     $("#usernameForm").show().slideDown("slow");
@@ -18,9 +19,14 @@ $(document).ready(function(){
 
   $("#aboutGame").click(function(){
     $(".landing-menu").slideUp();
-    $("#usernameForm").slideUp();
+    $("#usernameForm").hide();
+    $(".about-game").show();
   });
 
+  $("#returnToMenu").click(function(){
+    $(".about-game").hide();
+    $(".landing-menu").slideDown();
+  });
 
 
 
