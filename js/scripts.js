@@ -11,7 +11,7 @@ $(document).ready(function() {
       var playerOneInput = $("input#playerOneInput").val();
       var playerOneStatus = $("#player1Name").attr("class");
       var playerOne = new Player(playerOneInput, playerOneStatus, 0, 0);
-      var playerTwo = new Player("Bot ^_^", "", 0, 0);
+      var playerTwo = new Player("Jarvis", "", 0, 0);
     }
     else {
       /*....................MULTIPLAYER MODE....................*/
