@@ -92,9 +92,10 @@ body {
 #usernameForm {
   padding: 5em 0 5em 0;
   margin: 0;
-  background: #2b4e55;
-  color: #F3F3EE;
+  background: #DBEEFC;
+  color: black;
   font-size: 20px;
+  font-family: "Kaushan Script"
 }
 #usernameForm input {
   margin-left: auto;
@@ -127,7 +128,7 @@ body {
 
 /*............SCORE BOARD..............*/
 .overallScoreBoard {
-  background: #EF9A85;
+  background: #90CEF7;
   margin: 0;
   padding: 0;
   text-align: center;
@@ -135,7 +136,7 @@ body {
 }
 .overallScoreBoard h2 {
   margin: 0;
-  padding: 5px;
+  padding: 10px;
   font-size: 50px;
 }
 .playerOneScore {
@@ -151,7 +152,7 @@ body {
   font-family: "Slabo";
   font-size: 20px;
   text-align: center;
-  background: #BFCDE0;
+  background: #DBEEFC;
 }
 /*............END OF SCOREBOARD..............*/
 
@@ -159,15 +160,16 @@ body {
 .dice-roll-section {
   margin: 0;
   padding: 2em;
-  background: #BFCDE0;
+  background: #DBEEFC;
   text-align: center;
   font-size: 30px;
 }
 
 .userButtons {
+  background: #DBEEFC;
   margin: 0;
+  padding: 0 0 5px 0;
   text-align: center;
-  background: #BFCDE0;
   display: none;
 }
 
@@ -184,22 +186,21 @@ body {
 .player-board {
   padding: 0;
   margin: 0;
-  background: rgb(187, 137, 215);
+  background: #90CEF7;
   text-align: center;
   vertical-align: bottom;
-  font-family: "Chela One";
+  font-family: "Russo One";
 }
 .playerOneName {
   border-right: 0.5px solid rgba(0, 0, 0, 0.6);
 }
 .playerOneName h2, .playerTwoName h2{
   padding: 10px;
+  font-size: 35px;
   margin: 0;
 }
 
 .activeTurn {
-  text-shadow: 3px 3px 40px #008cff;
-  -webkit-text-stroke: 1px #008cff;
-  -moz-text-stroke: 1px #008cff;
+  color: #9809fb;
 }
 /*............END OF PLAYER BOARD..............*/

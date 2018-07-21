@@ -1,5 +1,6 @@
 $(document).ready(function(){
   $("#usernameForm").hide();
+  $(".game-section").hide();
   $("#singlePlayer").click(function(){
     //console.log("here i am");
     $("#usernameForm").show().slideDown("slow");
