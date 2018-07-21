@@ -1,8 +1,17 @@
 /*..............FRONT END..............*/
 $(document).ready(function(){
+
+
+
+
+
+
+
+
   $("form#usernameForm").submit(function(event){
     event.preventDefault();
-    $(".userButtons").show();
+    startGame();
+    
     var playerOneInput = $("input#playerOneInput").val();
     var playerTwoInput = $("input#playerTwoInput").val();
     var playerOneStatus = $("#player1Name").attr("class");
@@ -83,6 +92,11 @@ $(document).ready(function(){
 
   }); //End of Form Submit
 
+  function startGame(){
+    $(".landing-menu").slideUp();
+    $(".game-section").show();
+    $(".userButtons").show();
+  }
   function clearForm(){
     $("input#playerOneInput").val("");
     $("input#playerTwoInput").val("");
@@ -100,8 +114,6 @@ $(document).ready(function(){
     $("form#usernameForm").show();
     $(".userButtons").hide();
   }
-
-
 });//End of JQuery
 
 
