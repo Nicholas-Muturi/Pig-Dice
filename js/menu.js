@@ -2,7 +2,7 @@ $(document).ready(function(){
   $("#usernameForm").hide();
   $(".game-section").hide();
   $(".about-game").hide();
-  
+
   $("#singlePlayer").click(function(){
     $("#usernameForm").show().slideDown("slow");
     $("#singleplayerDiv").removeClass("col-md-6");

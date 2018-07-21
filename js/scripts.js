@@ -2,16 +2,17 @@
 $(document).ready(function(){
 
 
-
-
-
-
-
-
   $("form#usernameForm").submit(function(event){
     event.preventDefault();
+
+    //Checks Game Mode
+    if( $("#multiplayerDiv:hidden").length !== 0 ){
+      console.log("this is singplayer");
+    } else {
+      console.log("this is multiplayer");
+    }
+
     startGame();
-    
     var playerOneInput = $("input#playerOneInput").val();
     var playerTwoInput = $("input#playerTwoInput").val();
     var playerOneStatus = $("#player1Name").attr("class");
