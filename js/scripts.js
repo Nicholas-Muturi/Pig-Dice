@@ -7,7 +7,7 @@ $(document).ready(function() {
       /*.....................SINGLE PLAYER MODE...................*/
       gameType = "singlePlayer";
       startGame();
-      alert("Bot is in easy mode (more modes to come). Good luck!");
+      alert("Jarvis will hold after rolling three times. Good luck!");
       var playerOneInput = $("input#playerOneInput").val();
       var playerOneStatus = $("#player1Name").attr("class");
       var playerOne = new Player(playerOneInput, playerOneStatus, 0, 0);
@@ -25,7 +25,7 @@ $(document).ready(function() {
       var playerOne = new Player(playerOneInput, playerOneStatus, 0, 0);
       var playerTwo = new Player(playerTwoInput, playerTwoStatus, 0, 0);
 
-      alert("When your turn is on, your score and name is highlighted in purple. May the luckiest win!");
+      alert("When your turn is on, your score and name is highlighted in purple. Time to duel!");
     }
 
     $("#player1Name").text(playerOne.name);
@@ -125,7 +125,7 @@ $(document).ready(function() {
     function computersTurn(){
       playerTwo.status = $("#player2Name").attr("class");
       if(playerTwo.status == "activeTurn"){
-        for(var x=1;x<5;x++){
+        for(var x=1;x<3;x++){
           var diceRoll = playerTwo.rollDice();
           if (diceRoll != 1) {
             $("#dice").text(diceRoll);
