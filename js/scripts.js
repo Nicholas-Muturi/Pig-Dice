@@ -52,13 +52,16 @@ $(document).ready(function() {
           playerOne.turnScore += diceRoll;
           $("#playerOneTurnScore").text(playerOne.turnScore);
         } else {
-          $("#dice").text(diceRoll+"...whoops!");
+
+          $("#dice").text(diceRoll);
           playerOne.turnScore = 0;
           $("#playerOneTurnScore").text("0");
           switchPlayerTurn();
 
           if(gameType == "singlePlayer"){
-            computersTurn();
+            $("#dice").text("Player rolled "+diceRoll);
+            hidePlayingButtons();
+            setTimeout(computersTurn,3000);
           }
         }
       } else {
@@ -68,7 +71,7 @@ $(document).ready(function() {
           playerTwo.turnScore += diceRoll;
           $("#playerTwoTurnScore").text(playerTwo.turnScore);
         } else {
-          $("#dice").text(diceRoll+"...whoops!");
+          $("#dice").text("1");
           playerTwo.turnScore = 0;
           $("#playerTwoTurnScore").text("0");
           switchPlayerTurn();
@@ -90,7 +93,9 @@ $(document).ready(function() {
         switchPlayerTurn();
 
         if(gameType == "singlePlayer"){
-          computersTurn();
+          $("#dice").text("player holds");
+          hidePlayingButtons();
+          setTimeout(computersTurn,3000);
         }
 
       } else {
@@ -120,7 +125,7 @@ $(document).ready(function() {
     function computersTurn(){
       playerTwo.status = $("#player2Name").attr("class");
       if(playerTwo.status == "activeTurn"){
-        for(var x=1;x<3;x++){
+        for(var x=1;x<5;x++){
           var diceRoll = playerTwo.rollDice();
           if (diceRoll != 1) {
             $("#dice").text(diceRoll);
@@ -128,22 +133,26 @@ $(document).ready(function() {
             $("#playerTwoTurnScore").text(playerTwo.turnScore);
           }
           else {
-            $("#dice").text(diceRoll+"...whoops!");
             playerTwo.turnScore = 0;
             $("#playerTwoTurnScore").text("0");
+            break;
           }
         }
         playerTwo.hold();
-        if (playerTwo.overallScore >= 100) {
+        $("#player2OverallScore").text(playerTwo.overallScore);
+        $("#playerTwoTurnScore").text("0");
+        $("#dice").text("Jarvis holds");
+
+        if (playerTwo.overallScore >= 100){
+          $("#player2OverallScore").text(playerTwo.overallScore);
           alert(playerTwo.name + " is a Winner Winner Chicken Dinner!");
           location.reload();
           playerTwo.resetData();
         }else{
-          $("#player2OverallScore").text(playerTwo.overallScore);
-          $("#playerTwoTurnScore").text("0");
           switchPlayerTurn();
         }
       }
+      showPlayingButtons();
     }
 
   }); //End of Form Submit
@@ -171,6 +180,16 @@ $(document).ready(function() {
     $(".userButtons").hide();
     $(".landing-menu").show();
   }
+
+  function hidePlayingButtons(){
+    $("#rollDiceButton").hide();
+    $("#holdButton").hide();
+  }
+  function showPlayingButtons(){
+    $("#rollDiceButton").show();
+    $("#holdButton").show();
+  }
+
 }); //End of JQuery
 
 
